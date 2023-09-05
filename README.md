@@ -31,6 +31,7 @@ Database administrators use data control language (DCL) to manage or authorize d
 Create
 
 syntax
+
 CREATE TABLE table_name (
     column1 datatype,
     column2 datatype,
@@ -39,6 +40,7 @@ CREATE TABLE table_name (
 );
 
 example
+
 CREATE TABLE Persons (
     PersonID int,
     LastName varchar(255),
@@ -50,11 +52,14 @@ CREATE TABLE Persons (
 The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.
 
 ALTER TABLE - ADD Column
+
 To add a column in a table, use the following syntax:
+
 ALTER TABLE table_name
 ADD column_name datatype;
 
-example
+Example
+
 ALTER TABLE Customers
 ADD Email varchar(255);
 
@@ -64,7 +69,7 @@ To delete a column in a table, use the following syntax (notice that some databa
 ALTER TABLE table_name
 DROP COLUMN column_name;
 
-example
+Example
 ALTER TABLE Customers
 DROP COLUMN Email;
 
