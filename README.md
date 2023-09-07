@@ -347,5 +347,82 @@ SELECT columns
 FROM table1
 LEFT JOIN table2 ON table1.column = table2.column;
 
+Example
+
+SELECT orders.order_id, orders.order_date, customers.customer_name
+FROM orders
+LEFT JOIN customers ON orders.customer_id = customers.customer_id;
+
+
+Right Join:
+
+A RIGHT JOIN is the opposite of a LEFT JOIN. It returns all rows from the right table and the matching rows from the left table.
+
+Syntax
+
+SELECT columns
+FROM table1
+RIGHT JOIN table2 ON table1.column = table2.column;
+
+
+Example
+
+SELECT customers.customer_name, orders.order_id, orders.order_date
+FROM customers
+RIGHT JOIN orders ON customers.customer_id = orders.customer_id;
+
+FULL JOIN :
+
+A FULL JOIN returns all rows when there is a match in either the left or the right table. If there's no match in one of the tables, NULL values are returned for columns from the table without a match.
+
+Syntax
+
+SELECT columns
+FROM table1
+FULL JOIN table2 ON table1.column = table2.column;
+
+
+Example
+
+SELECT customers.customer_name, orders.order_id, orders.order_date
+FROM customers
+FULL JOIN orders ON customers.customer_id = orders.customer_id;
+
+SELF JOIN:
+
+A SELF JOIN is used when you want to combine rows from the same table.
+
+Syntax
+
+SELECT columns
+FROM table AS t1
+INNER JOIN table AS t2 ON t1.column = t2.column;
+
+Example
+
+SELECT e.employee_name, m.employee_name AS manager_name
+FROM employees e
+LEFT JOIN employees m ON e.manager_id = m.employee_id;
+
+
+Cross Join:
+
+A CROSS JOIN (also known as a Cartesian join) returns the Cartesian product of rows from two tables, resulting in every possible combination of rows.
+
+Syntax
+
+SELECT columns
+FROM table1
+CROSS JOIN table2;
+
+
+Example
+
+SELECT colors.color_name, sizes.size_name
+FROM colors
+CROSS JOIN sizes;
+
+
+
 
 
