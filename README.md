@@ -423,6 +423,29 @@ FROM colors
 CROSS JOIN sizes;
 
 
+Conditinal Statement
+
+onditional statements are used to control the flow of execution based on specified conditions. The primary conditional statement in SQL is the "CASE" expression, which allows you to perform conditional logic within a query to determine the values returned or the actions to be taken based on certain conditions. 
+
+Syntax
+
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    ...
+    ELSE else_result
+END
 
 
+Example
 
+SELECT
+    employee_name,
+    salary,
+    CASE
+        WHEN salary < 30000 THEN 'Low Salary'
+        WHEN salary >= 30000 AND salary < 60000 THEN 'Medium Salary'
+        WHEN salary >= 60000 THEN 'High Salary'
+        ELSE 'Unknown'
+    END AS salary_category
+FROM employees;
