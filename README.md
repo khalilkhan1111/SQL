@@ -137,4 +137,215 @@ Example
 
 SELECT DISTINCT Country FROM Customers;
 
+Count 
+
+The COUNT function is used to calculate the number of rows that match a specific condition or the number of non-null values in a specified column.
+
+SELECT COUNT(column_name)
+
+Example
+
+SELECT COUNT(DISTINCT job_title)
+FROM employees;
+
+Where 
+
+ The WHERE clause is used to limit the results of a SQL query to only include rows that match a particular condition or set of conditions.
+
+ Syntax
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+Example
+
+SELECT * FROM employees 
+WHERE department = 'Sales';
+
+Order By
+
+It is used to sort the result set of a query in a specified order based on one or more columns in the result set.
+
+Syntax
+
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1 [ASC | DESC], column2 [ASC | DESC], ...;
+
+
+Example
+
+SELECT *
+FROM products
+ORDER BY price DESC;
+
+
+Limit
+
+It is used to restrict the number of rows returned by a query
+
+Syntax
+
+SELECT column1, column2, ...
+FROM table_name
+LIMIT number_of_rows;
+
+
+Example
+
+SELECT *
+FROM students
+LIMIT 10;
+
+
+In Between
+
+It is used to filter rows from a database table based on a range of values for a specified column. 
+
+Syntax
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+
+
+Example
+
+SELECT *
+FROM employees
+WHERE age BETWEEN 25 AND 35;
+
+
+Like and ILike
+
+the "LIKE" operator is used to perform pattern matching within text data. The "ILIKE" operator is used for case-insensitive pattern matching, which means it matches text patterns regardless of case
+
+Syntax
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE column_name LIKE pattern;
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE column_name ILIKE pattern;
+
+Example
+
+SELECT *
+FROM products
+WHERE product_name LIKE 'Apple%';
+
+SELECT *
+FROM customers
+WHERE last_name ILIKE 'smith%';
+
+Aggregate Functions
+
+Aggregate functions in SQL are functions that perform a calculation on a set of values and return a single value as a result.
+Example - count, sum, average, min, max
+
+Syntax
+
+SELECT SUM(column_name) FROM table_name;
+
+SELECT AVG(column_name) FROM table_name;
+
+SELECT MIN(column_name) FROM table_name;
+
+SELECT MAX(column_name) FROM table_name;
+
+Example
+
+SELECT SUM(Sales) FROM Electronics;
+
+SELECT AVG(Sales) FROM Electronics;
+
+SELECT MIN(Sales) FROM Electronics;
+
+SELECT MAX(Sales) FROM Electronics;
+
+Group By
+
+It is used to group rows from a database table based on one or more columns.
+
+Syntax
+
+SELECT column1, column2, aggregate_function(column_name)
+FROM table_name
+GROUP BY column1, column2;
+
+Example
+
+SELECT department, AVG(salary) as avg_salary
+FROM employees
+GROUP BY department;
+
+Having By
+
+ It is used in conjunction with the "GROUP BY" clause to filter the results of a grouped query based on a specified condition.
+
+ Syntax
+
+SELECT column1, column2, aggregate_function(column_name)
+FROM table_name
+GROUP BY column1, column2
+HAVING condition;
+
+Example
+
+SELECT column1, column2, aggregate_function(column_name)
+FROM table_name
+GROUP BY column1, column2
+HAVING condition;
+
+
+AS statement
+
+It is used to assign an alias or alternative name to a column or table in the result set of a query. 
+
+Syntax
+
+SELECT column_name AS alias_name
+FROM table_name;
+
+Example
+
+SELECT first_name AS "First Name", last_name AS "Last Name"
+FROM employees;
+
+Join 
+
+It is used to combine rows from two or more tables based on a related column between them.
+
+INNER JOIN:
+
+In INNER JOIN returns only the rows that have matching values in both tables.
+
+Syntax
+
+SELECT columns
+FROM table1
+INNER JOIN table2 ON table1.column = table2.column;
+
+
+Example
+
+SELECT orders.order_id, orders.order_date, customers.customer_name
+FROM orders
+INNER JOIN customers ON orders.customer_id = customers.customer_id;
+
+
+LEFT JOIN:
+
+A LEFT JOIN returns all rows from the left table and the matching rows from the right table.
+
+Syntax
+
+SELECT columns
+FROM table1
+LEFT JOIN table2 ON table1.column = table2.column;
+
+
 
