@@ -1,5 +1,5 @@
 # SQL
-RDBMS
+.RDBMS
 
 It is a software system that allows users to create, maintain, and access databases. RDBMSs are based on the relational model, which organizes data into tables. Each table is made up of rows and columns, and each row represents a single record. 
 
